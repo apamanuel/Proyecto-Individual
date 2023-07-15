@@ -17,7 +17,7 @@ const getVideogames = async (req,res)=>{
                 description: game.description,
                 // En el campo de plataforma pueden ser varias y el numero puede variar dependiendo del juego
                 platforms: game.platforms?.map((p)=>p.platform?.name).join(','),
-                image: game.backgroung_image,
+                image: game.background_image,
                 releaseDate: game.released,
                 rating: game.rating
             };
@@ -31,6 +31,7 @@ const getVideogames = async (req,res)=>{
         res.status(500).json({message: error.message});      
     };
 };
+
 
 
 
