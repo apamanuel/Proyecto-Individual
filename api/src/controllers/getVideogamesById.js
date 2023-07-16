@@ -6,9 +6,7 @@ const { validate } = require('uuid');
 const getVideogamesById = async (req, res) => {
   try {
     const { idVideogame } = req.params;
-    console.log(idVideogame);
-    console.log('hola');
-
+    
     // Búsqueda del videojuego en la base de datos, para ello verifico si el id tiene un formato uuid
     if(validate(idVideogame)){
         const videogameDb = await Videogame.findByPk(idVideogame, {
@@ -21,6 +19,7 @@ const getVideogamesById = async (req, res) => {
     };   
 
     // Si no se encuentra en la base de datos, se busca en la API
+
     const response = await axios.get(`https://api.rawg.io/api/games/${idVideogame}?key=${API_KEY}`);
     const { data } = response;
 
