@@ -28,7 +28,7 @@ const createVideogame = async (req,res)=>{
 
             //Buscar los id's pertenecientes a los generos en DB
             const genresIds = await Genre.findAll({
-                where:{name:genresIds},
+                where:{name:genresArray},
             });
 
             //Asociar los generos encontrados al nuevo videojuego creado
