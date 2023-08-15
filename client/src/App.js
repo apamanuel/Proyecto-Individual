@@ -1,15 +1,18 @@
 import './App.css';
-import Landing from './components/Landing';
-import {Routes,Route} from 'react-router-dom'
+import Landing from './views/landing/Landing';
+import Home from './views/home/Home';
+import {Routes,Route} from 'react-router-dom';
+import Detail from './views/detail/Detail';
+import Form from './views/form/Form';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path ='/' element = {<Landing/>}/>
-        <Route path ='/home' element = {<h1>Soy el Home</h1>}/>
-        <Route path ='/detail' element = {<h1>Soy el Detail</h1>}/>
-        <Route path = '/form' element = {<h1>Soy el Formulario</h1>}/>
+        <Route path ='/home' element = {<Home/>}/>
+        <Route path ='/detail' element = {<Detail/>}/>
+        <Route path = '/form' element = {<Form/>}/>
       </Routes>
     </div>
   );
